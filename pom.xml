@@ -180,6 +180,9 @@
         </plugin>
       </plugins>
     </pluginManagement>
+
+	<finalName>valaxy-hello-world</finalName>
+
   </build>
 
 	<distributionManagement>
@@ -198,7 +201,6 @@
 	    
 	</distributionManagement>
 	
-	<finalName>valaxy-hello-world</finalName>
 
   <dependencyManagement>
     <dependencies>
