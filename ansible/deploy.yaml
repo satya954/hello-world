@@ -1,0 +1,20 @@
+---
+- name: Deploy Kubernetes through Ansible
+  hosts: kubernetes
+  tasks:
+  - name: Install Python-pip
+    apt:
+      name: python3-pip
+  - name: Install pre-requisites
+    pip:
+      name: 
+      - openshift
+      - pyyaml
+      - kubernetes
+  - name: Deploy web app
+    k8s:
+      state: present
+      definition: "{{ lookup('file', './helloworld.yml') }}"
+      kubeconfig: '/root/.kube/config'
+      namespace: 'default'
+      wait: true

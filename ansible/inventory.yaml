@@ -1,0 +1,3 @@
+
+[kubernetes]
+192.168.0.73 ansible_user=root ansible_password=password
