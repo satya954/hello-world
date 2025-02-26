@@ -32,6 +32,6 @@ node {
     }
     }
     stage('Deploy'){
-        sh 'export LC_ALL=C.UTF-8; cd /opt/playbooks ; ansible-playbook -i inventory.yaml deploy.yaml '
+        sh 'export LC_ALL=C.UTF-8; ansible-playbook -i inventory.yaml deploy.yaml '
     }
 }
