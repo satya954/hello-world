@@ -181,7 +181,7 @@
       </plugins>
     </pluginManagement>
 
-	<finalName>test-finalName</finalName>
+	<finalName>test-finalname</finalName>
 
   </build>
 
