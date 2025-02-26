@@ -1,0 +1,44 @@
+pipeline {
+    agent { 
+        label 'masternode' 
+    }
+    
+    tools {
+        maven "Maven3.9.9"
+    }
+    
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        
+        stage('DeleteWorkingDir'){
+            steps{
+                echo "Deleting the workspace directory"
+                deleteDir()
+            }
+        }
+        
+        stage('codeCheckOut'){
+            steps {
+                script {
+                    checkout scmGit(branches: [[name: '*/${BRANCH_NAME}']], extensions: [], userRemoteConfigs: [[credentialsId: 'github', url: 'https://github.com/satya954/2025-mithun-tech-classes.git']])
+                }
+                script {
+                    currentBuild.displayName = "decla-pipeline-#${env.BUILD_NUMBER}"
+                }
+            }
+                
+        }
+        
+        stage('Build'){
+            steps{
+                echo "Building the Project"
+                sh "mvn clean deploy -s /opt/apache-maven-3.9.9/conf/settings.xml"
+            }
+        }
+    }
+}
+
