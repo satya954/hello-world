@@ -15,3 +15,7 @@ After Installing the Jenkins. [ In this project, we are installing the Docker & 
 . On adding the above parameter, we need to restart docker & Jenkins applications.
 . Change the respective IP's, URL's & Credentials used in Jenkins Pipeline job.
 
+
+# Kubernetes
+- Create a Secret manually in Kubernetes nodes
+- kubectl create secret docker-registry nexus-50 --docker-server=192.168.1.50:8092 --docker-username=admin --docker-password=Admin@123 --docker-email=satyassn@medplusindia.com
