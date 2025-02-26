@@ -14,7 +14,7 @@
   - name: Deploy web app
     k8s:
       state: present
-      definition: "{{ lookup('file', './helloworld.yml') }}"
+      definition: "{{ lookup('file', './satya.yml') }}"
       kubeconfig: '/root/.kube/config'
       namespace: 'default'
       wait: true

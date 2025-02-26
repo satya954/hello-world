@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-satya
+  name: test-satya
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: test-satya
+  template:
+    metadata:
+      labels:
+        app: test-satya
+    spec:
+      containers:
+      - image: 192.168.1.50:8092/satya:0.0.1-SNAPSHOT
+        name: satya
+      imagePullSecrets:
+      - name: nexus-50
