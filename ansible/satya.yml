@@ -15,7 +15,7 @@ spec:
         app: test-satya
     spec:
       containers:
-      - image: http://192.168.1.50:8092/satya:0.0.1-SNAPSHOT
-        name: satya
+      - image: 192.168.1.50:8092/test-satya:0.0.1-SNAPSHOT
+        name: test-satya
       imagePullSecrets:
       - name: nexus-50
